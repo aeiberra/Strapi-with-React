@@ -1,32 +1,21 @@
+import React, {useState, useEffect} from 'react';
 import './App.css';
-import Post from './componets/Post'
-
-const posts = [
-  {
-    likes: 20,
-    descriptions: 'Working on farm',
-    image: {
-      url: "/uploads/cropped_Tractor_546ae40f61.jpeg",
-      name: "cropped-Tractor.jpeg",
-    },
-    author: {
-      username: "AlanIberra",
-    }
-  },
-  {
-    likes: 82,
-    descriptions: 'Selfie on Coworking',
-    image: {
-      url: "/uploads/POI_3d4ee875ff.png",
-      name: "Selfie.png",
-    },
-    author: {
-      username: "AlanIberra",
-    }
-  }
-];
+import Post from './componets/Post';
 
 function App() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const response = await fetch('http://localhost:1337/posts');
+      const data = await response.json();
+      setPosts(data);
+    };
+
+    getPost();
+  }, []);
+
   return (
     <div className="App">
       {posts.map(post => (
