@@ -11,15 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.Post {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.Card-Author>span {
-  margin-left: 170px;
-  font-size: 13px;
-}

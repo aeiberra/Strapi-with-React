@@ -1,19 +1,25 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
+import Nav from './componets/Nav';
+
 import Home from "./pages/Home";
+import Create from "./pages/Create";
 import './App.css';
 
 function App() {
 
-  return (
-      <div className="App">
-          <BrowserRouter>
-              <Switch>
-                  <Route path="/" exact component={Home} />
-              </Switch>
-          </BrowserRouter>
-      </div>
-  )
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Nav/>
+                <Switch>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/create" exact component={Create}/>
+                </Switch>
+            </BrowserRouter>
+        </div>
+    )
 }
 
 export default App;
