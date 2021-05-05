@@ -20,7 +20,7 @@ export default () => {
             {posts.map(post => (
                 <Post
                     likes={post.likes}
-                    descriptions={post.descriptions}
+                    description={post.description}
                     imageUrl={post.image && post.image.url}
                     imageName={post.image && post.image.name}
                     author={post.author && post.author.username}

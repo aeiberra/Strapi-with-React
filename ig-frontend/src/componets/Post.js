@@ -21,7 +21,7 @@ const API_URL = 'http://localhost:1337';
 
 const formatImageUrl = (url) => `${API_URL}${url}`;
 
-export default ({imageUrl, imageName, descriptions, likes, author}) => {
+export default ({imageUrl, imageName, description, likes, author}) => {
     const classes = useStyles();
 
     return (
@@ -35,7 +35,7 @@ export default ({imageUrl, imageName, descriptions, likes, author}) => {
                     />
                     <CardContent>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            {descriptions}
+                            {description}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
